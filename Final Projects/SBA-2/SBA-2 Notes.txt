@@ -1,0 +1,75 @@
+Service Call URL:
+-----------------
+http://localhost:9090/eloan-app
+
+CustomerController:
+------------------
+http://localhost:9090/eloan-app/customer/register
+http://localhost:9090/eloan-app/customer/apply-loan/{customerId}
+http://localhost:9090/eloan-app/customer/loan-status/{loanAppId}
+http://localhost:9090/eloan-app/customer/loan-status-all/{customerId}
+
+Example1-register:
+------------------
+{
+"email" : "jeevan@email.com",
+"firstName" : "Jeevan",
+"lastName" : "Gajawada",
+"mobile" : "7799121010",
+"role" : "Customer"
+}
+
+Example2-apply-loan:
+-------------------
+{
+"customerId" : "789123"
+"loanName" : "Home Loan",
+"loanAmount" : "25000",
+"loanApplicationDate" : "06-12-2020",
+"businessStructure" : "Individual",
+"billingIndicator" : "Salaried",
+"taxIndicator" : "Tax Payer"
+}
+
+Example3-getStatus and Example4-getStatusAll:
+--------------------------------------------
+http://localhost:9090/eloan-app/customer/loan-status/4
+http://localhost:9090/eloan-app/customer/loan-status-all/789124
+
+
+AdminController:
+----------------
+http://localhost:9090/eloan-app/admin/register-clerk
+http://localhost:9090/eloan-app/admin/register-manager
+http://localhost:9090/eloan-app/admin/all-clerks
+http://localhost:9090/eloan-app/admin/all-managers
+
+{
+"email" : "clerk1@gmail.com",
+"firstName" : "Clerk1",
+"lastName" : "Lastname1",
+"mobile" : "7799111111",
+"role" : "Clerk"
+}
+
+{
+"email" : "Manager1@gmail.com",
+"firstName" : "Manager1",
+"lastName" : "MgrLastname1",
+"mobile" : "7711234567",
+"role" : "Manager"
+}
+
+
+ClerkController:
+---------------
+http://localhost:9090/eloan-app//clerk/all-applied
+http://localhost:9090/eloan-app/admin/clerk/process/{clerkId}/{loanAppId}
+
+
+ManagerController:
+------------------
+http://localhost:9090/eloan-app/manager/all-processed
+http://localhost:9090/eloan-app/manager/reject-loan/{managerId}/{loanAppId}
+http://localhost:9090/eloan-app/manager/sanction-loan/{managerId}/{loanAppId}
+
